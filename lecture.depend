@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1580762317 source:c:\users\masterdeng\documents\lecture\main.c
+	<stdio.h>
+	<stdlib.h>
+	"function/function.h"
+	"function/partie1.h"
+	"function/partie2.h"
+
+1580726945 c:\users\masterdeng\documents\lecture\partie1.h
+
+1580760875 c:\users\masterdeng\documents\lecture\function\function.h
+
+1580736778 c:\users\masterdeng\documents\lecture\function\partie1.h
+
+1580735499 c:\users\masterdeng\documents\lecture\function\partie2.h
+
