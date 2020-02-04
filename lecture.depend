@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1580806084 source:c:\users\masterdeng\documents\lecture\main.c
+1580807283 source:c:\users\masterdeng\documents\lecture\main.c
 	<stdio.h>
 	<stdlib.h>
 	"function/function.h"

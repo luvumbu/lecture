@@ -11,18 +11,14 @@ int main(int argc, char *argv[])
     char nom[valeurIntegerMax];
     char nomfinal[valeurIntegerMax];
 
-
-
-
-
-    //printf("Quel est votre nom ? ");
-    //fgets(nom, 10, stdin);
-
-
-
-
     printf("Quel est votre nom ? ");
     fgets(nom, valeurIntegerMax, stdin);
+
+
+    char nomBienvenue[valeurIntegerMax] ;
+    strcpy(nomBienvenue, nom); // On copie "chaine" dans "copie"
+
+
 
     int  i = 0 ;
     int iz = 0 ;
@@ -63,19 +59,34 @@ int main(int argc, char *argv[])
         {
             nomf[i+5] = nom[i];
         }
-
-
-    printf("%s",nomf) ;
-
-
-
-        fichier = fopen(nomf, "w");
+  /*      fichier = fopen(nomf, "w");
 
     if (fichier != NULL)
     {
         fputs("Salut les Zér0s\nComment allez-vous ?", fichier);
         fclose(fichier);
     }
+ */
+
+     fichier = fopen(nomf, "r+");
+
+    if (fichier != NULL)
+    {
+
+    }
+    else
+    {
+        // On affiche un message d'erreur si on veut
+        printf("Bienvenue a toi %s \n \n",nomBienvenue);
+        fichier = fopen(nomf, "w");
+        if (fichier != NULL)
+        {
+            fputs("Salut les Zér0s\nComment allez-vous ?", fichier);
+            fclose(fichier);
+        }
+    }
+     printf("\n--Menu principal --\n") ;
+     printf("\n --  Creation de site web facile  -- \n") ;
 
 
 
