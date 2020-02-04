@@ -6,10 +6,12 @@
 
 int main(int argc, char *argv[])
 {
+    FILE* fichier = NULL;
     int valeurIntegerMax = 100 ;
     char nom[valeurIntegerMax];
+    char nomfinal[valeurIntegerMax];
 
-    char prenom[valeurIntegerMax];
+
 
 
 
@@ -20,112 +22,62 @@ int main(int argc, char *argv[])
 
 
     printf("Quel est votre nom ? ");
-    fgets(nom, 10, stdin);
-    printf("Quel est votre prenom ? ");
-    fgets(prenom, 10, stdin);
+    fgets(nom, valeurIntegerMax, stdin);
 
-        int ifinal = 0;
-       for(int i = 0; i<valeurIntegerMax ; i++)
+    int  i = 0 ;
+    int iz = 0 ;
+    for(  i = 0; i<valeurIntegerMax;i++)
     {
+        if((int)nom[i]==10)
+            {
 
-        if(nom[i]==10)
-        {
-            ifinal = i;
-            i = valeurIntegerMax ;
-        }
+                    iz = i ;
+
+                 nom[i] = '.';
+                 nom[i+1] = 't';
+                 nom[i+2] = 'x';
+                 nom[i+3] = 't';
+
+
+                // printf("\n%s",nom) ;
+            }
         else
         {
 
         }
     }
 
-    char nomFinal[ifinal];
-    for(int i = 0; i<ifinal ; i++)
-    {
 
-        if(nom[i]==10)
+
+      char nomf[1000];
+
+      nomf[0] = 'u';
+      nomf[1] = 's';
+      nomf[2] = 'e';
+      nomf[3] = 'r';
+      nomf[4] = '/';
+
+
+
+        for(i= 0;i<valeurIntegerMax ;i++)
         {
-            ifinal = i;
-            i = valeurIntegerMax ;
+            nomf[i+5] = nom[i];
         }
-        else
-        {
-            nomFinal[i]=nom[i] ;
-        }
+
+
+    printf("%s",nomf) ;
+
+
+
+        fichier = fopen(nomf, "w");
+
+    if (fichier != NULL)
+    {
+        fputs("Salut les Zér0s\nComment allez-vous ?", fichier);
+        fclose(fichier);
     }
 
 
 
-
-
-       for(int i = 0; i<valeurIntegerMax ; i++)
-    {
-
-        if(prenom[i]==10)
-        {
-            ifinal = i;
-            i = valeurIntegerMax ;
-        }
-        else
-        {
-
-        }
-    }
-
-        char prenomFinal[ifinal];
-    for(int i = 0; i<ifinal ; i++)
-    {
-
-        if(nom[i]==10)
-        {
-            ifinal = i;
-            i = valeurIntegerMax ;
-        }
-        else
-        {
-            prenomFinal[i]=prenom[i] ;
-        }
-    }
-
-    printf("\n %s \n %s",prenomFinal,nomFinal);
-
-    // PArtie recuperation du prenom
-
-
-
-
-
-    //printf("Bonjour %s %s",prenom,nom);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*    for(int i = 0; i<valeurIntegerMax ; i++)
-    {
-        printf("\n %c",nom[i]) ;
-        if(nom[i]==10)
-        {
-            i = valeurIntegerMax ;
-            printf("\n %d",i) ;
-        }
-        else
-        {
-
-        }
-    }
-*/
     return 0;
 }
